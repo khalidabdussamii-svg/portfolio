@@ -121,13 +121,6 @@ export default function Login({ onLogin }) {
               )}
             </button>
           </form>
-
-          {/* Footer Note */}
-          <div className="mt-6 text-center">
-            <p className="text-xs text-slate-500">
-              Default: admin / admin123456
-            </p>
-          </div>
         </div>
       </motion.div>
     </div>
