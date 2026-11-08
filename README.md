@@ -8,7 +8,7 @@ The site has a dark glassmorphism design with neon cyan and purple accents, smoo
 ![Portfolio preview](Frontend/public/screenshot.png)
 -->
 
-**Live site:** _add your Vercel link here after deploying_
+**Live site:** (https://portfolio-khalid-669f.vercel.app)
 
 ---
 
