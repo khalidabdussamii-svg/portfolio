@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { TypeAnimation } from 'react-type-animation';
-import { useEffect, useState } from 'react';
 import { HiArrowDownTray, HiEnvelope } from 'react-icons/hi2';
-import { FaGithub, FaLinkedinIn, FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { SiCredly } from 'react-icons/si';
 import { imgSrc } from '../utils/imgSrc';
 import { usePortfolioData } from '../context/PortfolioContext';
-   import { getSocialIcon } from '../utils/socialIcons';
+import { getSocialIcon } from '../utils/socialIcons';
 
 const containerVariants = {
   hidden: {},
@@ -19,53 +16,9 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const iconMap = {
-  FaGithub,
-  FaLinkedinIn,
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  SiCredly,
-};
-
-// Counter namespace — unique to this portfolio
-const COUNTER_NS = 'khalid-abdussamii-portfolio';
-const COUNTER_KEY = 'visitors';
-
-function useVisitorCount() {
-  const [count, setCount] = useState(null);
-
-  useEffect(() => {
-    // Only count once per browser session so page refreshes don't spam the counter
-    const alreadyCounted = sessionStorage.getItem('visit_counted');
-
-    const fetchAndIncrement = async () => {
-      try {
-        const endpoint = alreadyCounted
-          ? `https://api.counterapi.dev/v1/${COUNTER_NS}/${COUNTER_KEY}`
-          : `https://api.counterapi.dev/v1/${COUNTER_NS}/${COUNTER_KEY}/up`;
-
-        const res = await fetch(endpoint);
-        const data = await res.json();
-        setCount(data.count ?? data.value ?? null);
-
-        if (!alreadyCounted) sessionStorage.setItem('visit_counted', 'true');
-      } catch {
-        // Silently fail — don't break the page if the counter API is down
-      }
-    };
-
-    fetchAndIncrement();
-  }, []);
-
-  return count;
-}
-
 export default function Hero() {
   const { portfolioData, loading } = usePortfolioData();
-  const visitorCount = useVisitorCount();
 
-  // Use portfolioData instead of PORTFOLIO_DATA
   const typingSequence = portfolioData.typingPhrases.flatMap(p => [p, 2000]);
 
   const stats = [
@@ -73,7 +26,6 @@ export default function Hero() {
     { value: portfolioData.achievement?.stats?.[0]?.value || '', label: 'SRC Election Votes (#1)' },
     { value: `${portfolioData.experience?.length || 0}`,      label: 'Leadership & Roles' },
     { value: `${portfolioData.projects?.length || 0}`,        label: 'GitHub Projects' },
-    { value: visitorCount !== null ? visitorCount.toLocaleString() : '...', label: '👁️ Portfolio Views' },
   ];
 
   if (loading) {
@@ -172,10 +124,12 @@ export default function Hero() {
                   Hire Me
                 </button>
               </Link>
-              <a 
-                href={portfolioData.cvUrl ? imgSrc(portfolioData.cvUrl, '#') : '#'} 
-                download 
-                id="hero-download-cv"    target="_blank" rel="noopener noreferrer"
+              <a
+                href={portfolioData.cvUrl ? imgSrc(portfolioData.cvUrl, '#') : '#'}
+                download
+                id="hero-download-cv"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline"
                 onClick={(e) => {
                   if (!portfolioData.cvUrl) {
@@ -225,7 +179,7 @@ export default function Hero() {
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
                 >
-                  {/* React - Top (0°) */}
+                  {/* Python - Top */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <motion.div
                       animate={{ rotate: -360 }}
@@ -236,10 +190,10 @@ export default function Hero() {
                       <span className="text-xs text-slate-200 font-semibold tracking-wide">Python</span>
                     </motion.div>
                   </div>
-                  
-                  {/* Wireshark - Top Right (72°) */}
-                  <div className="absolute" style={{ 
-                    top: '9%', 
+
+                  {/* Machine Learning & Robotics - Top Right */}
+                  <div className="absolute" style={{
+                    top: '9%',
                     right: '21%',
                     transform: 'translate(50%, -50%)'
                   }}>
@@ -252,8 +206,8 @@ export default function Hero() {
                       <span className="text-xs text-slate-200 font-semibold tracking-wide">Machine Learning & Robotics</span>
                     </motion.div>
                   </div>
-                  
-                  {/* Tailwind - Right (144°) */}
+
+                  {/* Data Science - Right */}
                   <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
                     <motion.div
                       animate={{ rotate: -360 }}
@@ -264,8 +218,8 @@ export default function Hero() {
                       <span className="text-xs text-slate-200 font-semibold tracking-wide">Data Science</span>
                     </motion.div>
                   </div>
-                  
-                  {/* Next.js - Bottom (216°) */}
+
+                  {/* Leadership - Bottom */}
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                     <motion.div
                       animate={{ rotate: -360 }}
@@ -276,8 +230,8 @@ export default function Hero() {
                       <span className="text-xs text-slate-200 font-semibold tracking-wide">Leadership</span>
                     </motion.div>
                   </div>
-                  
-                  {/* TypeScript - Left (288°) */}
+
+                  {/* Deep Learning & AI - Left */}
                   <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
                     <motion.div
                       animate={{ rotate: -360 }}
@@ -303,9 +257,9 @@ export default function Hero() {
         >
           {/* Cyberpunk / High-Tech HUD Container */}
           <div className="relative rounded-2xl bg-[#09090b] border border-white/5 overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-            
+
             {/* Tech Grid Background Animation */}
-            <div 
+            <div
               className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700 z-0"
               style={{
                 backgroundImage: 'linear-gradient(#00d4ff 1px, transparent 1px), linear-gradient(90deg, #00d4ff 1px, transparent 1px)',
@@ -335,8 +289,8 @@ export default function Hero() {
             <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#00d4ff] rounded-br-xl opacity-70 z-5" />
 
             {/* Content Container */}
-            <div className="relative z-10 w-full backdrop-blur-sm">{/* Changed z-10 to allow binary to show */}
-              <div className="grid grid-cols-2 lg:grid-cols-5 divide-x divide-y lg:divide-y-0 divide-[#00d4ff]/10">
+            <div className="relative z-10 w-full backdrop-blur-sm">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#00d4ff]/10">
                 {stats.map(({ value, label }, i) => (
                   <motion.div
                     key={label}
