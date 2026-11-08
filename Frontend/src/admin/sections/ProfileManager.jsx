@@ -26,7 +26,8 @@ export default function ProfileManager() {
     roleDetail: '',
     education: '',
     languages: '',
-    socials: [],
+        socials: [],
+    email: '',
   });
 
   const [uploadedFiles, setUploadedFiles] = useState({
@@ -54,6 +55,7 @@ export default function ProfileManager() {
         roleDetail: data.profile?.title || '',
         education: data.education?.[0]?.degree || '',
         languages: data.profile?.languages || '',
+        email: data.profile?.email || data.contact?.email || '',
         socials: data.contact?.social ? Object.entries(data.contact.social).map(([key, value]) => ({
           id: key,
           label: key.charAt(0).toUpperCase() + key.slice(1),

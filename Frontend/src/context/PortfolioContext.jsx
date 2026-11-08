@@ -174,29 +174,29 @@ export const usePortfolioData = () => {
 };
 
 export const PortfolioProvider = ({ children }) => {
+  // Start with the built-in data so the site shows instantly
   const [portfolioData, setPortfolioData] = useState(FALLBACK_DATA);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // never block the page
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let cancelled = false;
+
     const fetchPortfolioData = async () => {
       try {
-        setLoading(true);
+        // Fetch in the background; swap in live data whenever it arrives
         const data = await portfolioAPI.getPortfolio();
-        const transformedData = transformPortfolioData(data);
-        setPortfolioData(transformedData);
+        if (cancelled) return;
+        setPortfolioData(transformPortfolioData(data));
         setError(null);
       } catch (err) {
         console.error('Error fetching portfolio data:', err);
-        setError(err.message);
-        // Keep using fallback data on error
-        setPortfolioData(FALLBACK_DATA);
-      } finally {
-        setLoading(false);
+        if (!cancelled) setError(err.message); // keep fallback data
       }
     };
 
     fetchPortfolioData();
+    return () => { cancelled = true; };
   }, []);
 
   const refreshPortfolio = async () => {
@@ -212,12 +212,7 @@ export const PortfolioProvider = ({ children }) => {
   };
 
   return (
-    <PortfolioContext.Provider value={{ 
-      portfolioData, 
-      loading, 
-      error,
-      refreshPortfolio 
-    }}>
+    <PortfolioContext.Provider value={{ portfolioData, loading, error, refreshPortfolio }}>
       {children}
     </PortfolioContext.Provider>
   );
