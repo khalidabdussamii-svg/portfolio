@@ -2,7 +2,7 @@
  "profile": {
   "name": "Khalid Abdussamii",
   "title": "Computer Science Student | Aspiring Data Scientist",
-  "bio": "Computer Science student at Albukhary International University building a career in Data Science, Machine Learning and AI, backed by 59 verified certificates from IBM, DeepLearning.AI, Imperial College London and the University of Michigan. Elected to the Student Representative Council as the highest-voted general-seat candidate, I combine technical depth with proven leadership.",
+  "bio": "Computer Science student at Albukhary International University building a career in Data Science, Machine Learning and AI, backed by 59 verified certificates from IBM, DeepLearning.AI, Imperial College London and the University of Michigan. Elected to the Students Representative Council as the highest-voted general-seat candidate, I combine technical depth with proven leadership.",
   "email": "",
   "phone": "",
   "location": "",
@@ -13,7 +13,7 @@
   "description": "I'm Khalid, a BSc (Hons) Computer Science student at Albukhary International University with a focus on Machine Learning, Deep Learning and Data Analytics. Beyond the code, I lead: I was the highest-voted candidate in the AIU SRC general-seat election, now serve as Exco of Art & Culture, and have held leadership roles across NISCO, AFSA and the School of Computing & Informatics. I also perform, sing and compete, which keeps my communication sharp and my teamwork instinctive.",
   "highlights": [
    "Highest-voted candidate in the AIU SRC general-seat election (655 votes, #1 of 29)",
-   "Exco of Art & Culture, Student Representative Council (2026–2027 term)",
+   "Exco of Art & Culture, Students Representative Council (2026–2027 term)",
    "59 verified certificates: IBM Data Science & Data Analyst, DeepLearning.AI Deep Learning Specialization",
    "Dean's List Award recipient · Global #Mbassador 2026"
   ]
@@ -85,7 +85,7 @@
  ],
  "experience": [
   {
-   "company": "AIU Student Representative Council",
+   "company": "AIU Students Representative Council",
    "position": "Exco of Art & Culture",
    "startDate": "2026-06-01T00:00:00.000Z",
    "current": true,
@@ -627,7 +627,7 @@
  ],
  "achievement": {
   "title": "Highest-Voted SRC Candidate",
-  "subtitle": "AIU Student Representative Council Election · Academic Year 2025/2026",
+  "subtitle": "AIU Students Representative Council Election · Academic Year 2025/2026",
   "stats": [
    {
     "value": "655",

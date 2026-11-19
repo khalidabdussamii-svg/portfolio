@@ -8,8 +8,8 @@ export const FALLBACK_DATA = {
   typingPhrases: [
     'Aspiring Data Scientist',
     'Machine Learning Enthusiast',
-    'SRC (Student Representative Council) Exco – Art & Culture',
-    'Highest-Voted SRC (Student Representative Council) Candidate',
+    'SRC (Students Representative Council) Exco – Art & Culture',
+    'Highest-Voted SRC (Students Representative Council) Candidate',
     'Student Leader & Performer',
     '2-Time Cleanest & Most Organized Room Award Winner (2025–2026)',
     'AI Enthusiast',
@@ -21,7 +21,7 @@ export const FALLBACK_DATA = {
   heroDescription:
     'Computer Science student at Albukhary International University building a career in Data Science, Machine Learning and AI, backed by ' +
     `${certifications.length} verified certificates from IBM, DeepLearning.AI, Imperial College London and the University of Michigan. ` +
-    'Elected to the Student Representative Council as the highest-voted general-seat candidate, I combine technical depth with proven leadership.',
+    'Elected to the Students Representative Council as the highest-voted general-seat candidate, I combine technical depth with proven leadership.',
   cvUrl: '', // empty = "CV coming soon". Upload your PDF via the admin panel later.
 
   about: {
@@ -40,7 +40,7 @@ export const FALLBACK_DATA = {
     languages: 'English, Arabic, Hausa, Yoruba',
     highlights: [
       'Highest-voted candidate in the AIU SRC general-seat election (655 votes, #1 of 29)',
-      'Exco of Art & Culture, Student Representative Council (2026–2027 term)',
+      'Exco of Art & Culture, Students Representative Council (2026–2027 term)',
       `${certifications.length} verified certificates: IBM Data Science & Data Analyst, DeepLearning.AI Deep Learning Specialization`,
       "Dean's List Award recipient · Global #Mbassador 2026",
     ],
@@ -49,7 +49,7 @@ export const FALLBACK_DATA = {
   // Highlight card for the election result (verified from the official results slide)
   achievement: {
     title: 'Highest-Voted SRC Candidate',
-    subtitle: 'AIU Student Representative Council Election · Academic Year 2025/2026',
+    subtitle: 'AIU Students Representative Council Election · Academic Year 2025/2026',
     stats: [
       { value: '655', label: 'Votes received' },
       { value: '#1', label: 'Of 29 general-seat candidates' },
@@ -75,7 +75,7 @@ export const FALLBACK_DATA = {
 
   experience: [
     {
-      role: 'Exco of Art & Culture', org: 'AIU Student Representative Council', period: 'Jun 2026 – Present', location: 'Alor Setar', type: 'Leadership', highlight: true,
+      role: 'Exco of Art & Culture', org: 'AIU Students Representative Council', period: 'Jun 2026 – Present', location: 'Alor Setar', type: 'Leadership', highlight: true,
       desc: 'Elected to the SRC after topping the general-seat vote; leads art and culture initiatives for the AIU student body.'
     },
     { role: 'Ambassador', org: 'Maybank', period: 'May 2026 – Present', location: 'Bandar Baru Bangi', type: 'Ambassador', desc: '' },
